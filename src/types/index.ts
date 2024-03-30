@@ -1,4 +1,5 @@
-import { Vector3 } from 'three';
+import { ColorRepresentation, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from 'three';
+import {ReactNode} from "react";
 
 export interface ModelRenderProps {
     url: string;
@@ -10,4 +11,24 @@ export interface ModelRenderProps {
 
 export interface CameraAdapterProps {
     initialPosition: [number, number, number];
+}
+export interface AmbientLightComponentProps{
+    intensity?: number;
+    color?: ColorRepresentation;
+}
+
+export interface HemisphereLightProps {
+    skyColor?: ColorRepresentation;
+    groundColor?: ColorRepresentation;
+    intensity?: number;
+}
+
+export interface ThreeProviderProps {
+    children: ReactNode;
+}
+
+export interface ThreeContextType {
+    scene: Scene;
+    camera: PerspectiveCamera;
+    renderer: WebGLRenderer;
 }

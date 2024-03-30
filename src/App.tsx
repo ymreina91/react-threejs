@@ -1,15 +1,16 @@
 import React from 'react';
+import {ThreeProvider} from "./context/ThreeContext.tsx";
 import './App.css';
-import ThreeScene from './components/ThreeScene';
+import Scene3D from "./components/Scene3D.tsx";
 
-// Definimos App como un componente funcional de React sin props
 const App: React.FC = () => {
-  return (
-    <>
-      <p className="read-the-docs">Example Three.js</p>
-      <ThreeScene />
-    </>
-  );
+    return (
+        <>
+            <ThreeProvider>
+                <Scene3D/>
+            </ThreeProvider>
+        </>
+    );
 };
 
 export default App;
